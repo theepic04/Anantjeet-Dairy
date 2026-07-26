@@ -46,9 +46,6 @@ app.use("/api/settings",settingsRoutes);
 app.use("/api/admin",adminProfileRoutes);
 
 // Test Route
-app.get("/", (req, res) => {
-    res.send("🚀 Anantjeet Dairy Backend is Running Successfully!");
-});
 
 // Start Server
 app.use("/uploads", express.static("uploads"));
