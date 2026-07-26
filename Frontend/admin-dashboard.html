@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Anantjeet Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin-dashboard-style.css">
+</head>
+<body>
+<div class="shell">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="side-brand">
+      <div class="name">Anantjeet Dairy<small>Admin Panel</small></div>
+    </div>
+    <nav class="side-nav" id="sideNav">
+      <div class="side-group-label">Overview</div>
+      <button class="nav-item active" data-target="panel-dashboard">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="12" width="7" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="16" width="7" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        Dashboard
+      </button>
+      <div class="side-group-label">Manage</div>
+      <button class="nav-item" data-target="panel-orders">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7l1.4-3h13.2L20 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="7" width="16" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 11a3 3 0 006 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        Orders
+      </button>
+      <button class="nav-item" data-target="panel-products">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7.5L12 12l8-4.5M12 12v9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        Products
+      </button>
+      <button class="nav-item" data-target="panel-queries">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16a1 1 0 011 1v11a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        Queries
+      </button>
+      <button class="nav-item" data-target="panel-reviews">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3-5.4 3 1.3-6-4.6-4.1 6.1-.6L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        Reviews
+      </button>
+      <div class="side-group-label">Insights</div>
+      <button class="nav-item" data-target="panel-reports">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M11 20V4M18 20v-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        Reports
+      </button>
+      <button class="nav-item" data-target="panel-settings">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 13.5a7.6 7.6 0 000-3l1.9-1.5-2-3.4-2.3.6a7.7 7.7 0 00-2.6-1.5L14 2h-4l-.4 2.7a7.7 7.7 0 00-2.6 1.5l-2.3-.6-2 3.4L4.6 10.5a7.6 7.6 0 000 3L2.7 15l2 3.4 2.3-.6c.76.66 1.64 1.17 2.6 1.5L10 22h4l.4-2.7a7.7 7.7 0 002.6-1.5l2.3.6 2-3.4-1.9-1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></span>
+        Settings
+      </button>
+    </nav>
+    <div class="side-foot">
+      <div class="side-admin">
+        <div class="avatar" id="sideAvatarInitial">A</div>
+        <div class="who">
+          <div class="n" id="sideOwnerName">Anantjeet Sharma</div>
+          <div class="r">Admin</div>
+        </div>
+      </div>
+      <a href="#" class="logout-link" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Log out
+      </a>
+    </div>
+  </aside>
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="crumb" id="pageCrumb">Admin / Dashboard</div>
+      </div>
+    </div>
+    <div class="content">
+      <!-- ===== DASHBOARD PANEL ===== -->
+      <section class="panel active" id="panel-dashboard">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="top">
+              <div class="ic-chip chip-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            </div>
+            <div class="value" id="visitorsCount">0</div>
+            <div class="label">Total visitors</div>
+          </div>
+          <div class="stat-card">
+            <div class="top">
+              <div class="ic-chip chip-gold"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7.5L12 12l8-4.5M12 12v9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="value" id="productsCountDashboard">0</div>
+            <div class="label">Total products</div>
+          </div>
+          <div class="stat-card">
+            <div class="top">
+              <div class="ic-chip chip-leaf"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7l1.4-3h13.2L20 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="7" width="16" height="13" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            </div>
+            <div class="value" id="ordersCountDashboard">0</div>
+            <div class="label">Orders this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="top">
+              <div class="ic-chip chip-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+            </div>
+            <div class="value" id="revenueCountDashboard">₹0</div>
+            <div class="label">Revenue this month</div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== ORDERS PANEL ===== -->
+      <section class="panel" id="panel-orders">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>All orders</h2>
+              <div class="sub" id="ordersCount">0 orders</div>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="link-btn">Export CSV (Coming Soon)</button>
+              <button class="btn-primary" id="addOrderBtn">+ Add Order</button>
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Amount</th><th>Billing</th></tr></thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- ===== PRODUCTS PANEL ===== -->
+      <section class="panel" id="panel-products">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>All products</h2>
+              <div class="sub" id="productCount">
+              0 products across the catalog
+              </div>
+            </div>
+            <button class="btn-primary" id="addProductBtn">+ Add product</button>
+          </div>
+          <table>
+            <colgroup>
+
+              <col style="width:80px">
+
+              <col style="width:180px">
+
+              <col>
+
+              <col style="width:130px">
+
+              <col style="width:120px">
+
+            </colgroup>
+            <thead><tr><th></th><th>Product</th><th>Description</th><th>Price</th><th></th></tr></thead>
+            <tbody id="productsTbody">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- ===== QUERIES PANEL ===== -->
+      <section class="panel" id="panel-queries">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>Contact form queries</h2>
+              <div class="sub" id="queriesCount">0 messages received</div>
+            </div>
+          </div>
+          <div class="table-scroll">
+          <table>
+            <thead><tr><th>Name</th><th>Gender</th><th>Contact</th><th>Address</th><th>Message</th><th>Received</th><th></th></tr></thead>
+            <tbody id="queriesTbody">
+              
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+      <!-- ===== REVIEWS PANEL ===== -->
+      <section class="panel" id="panel-reviews">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>Customer reviews</h2>
+              <div class="sub" id="reviewsCount">0 reviews</div>
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>Customer</th><th>Rating</th><th style="width:55%;">Comment</th></tr></thead>
+            <tbody id="reviewsTbody">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- ===== REPORTS PANEL ===== -->
+      <section class="panel" id="panel-reports">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>Sales report</h2>
+              <div class="sub">Overview for this quarter — connect a backend to power live charts</div>
+            </div>
+          </div>
+          <div class="empty-note">Report charts will appear here once order data is connected.</div>
+        </div>
+      </section>
+      <!-- ===== SETTINGS PANEL ===== -->
+      <section class="panel" id="panel-settings">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h2>Store settings</h2>
+              <div class="sub">Basic details shown across the storefront</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label>Store name</label><input type="text" id="storeName"></div>
+            <div class="field"><label>Support email</label><input type="email" id="supportEmail"></div>
+            <div class="field"><label>Delivery city</label><input type="text" id="deliveryCity"></div>
+            <div class="field"><label>Store opening days</label><input type="text" id="openingDays"></div>
+            <div class="field full"><label>Store address</label><textarea id="storeAddress"></textarea></div>
+            <div class="field"><label>Facebook link</label><input type="url" id="facebookLink"></div>
+            <div class="field"><label>Instagram link</label><input type="url" id="instagramLink"></div>
+            <div class="field full">
+              <label>Store opening hours (shift-wise)</label>
+              <div class="shift-row">
+                <span class="shift-label">Morning</span>
+                <input type="time" id="morningOpen">
+                <span class="shift-sep">to</span>
+                <input type="time" id="morningClose">
+              </div>
+              <div class="shift-row">
+                <span class="shift-label">Evening</span>
+                <input type="time" id="eveningOpen">
+                <span class="shift-sep">to</span>
+                <input type="time" id="eveningClose">
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="link-btn">Cancel</button>
+            <button class="btn-primary" id="saveSettingsBtn">Save changes</button>
+          </div>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <div class="card-head">
+            <div>
+              <h2>Account settings</h2>
+              <div class="sub">Admin login details for this dashboard</div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="field full"><label>Owner name</label><input type="text" id="ownerName"></div>
+            <div class="field full"><label>Username</label><input type="text" id="userName"></div>
+            <div class="field full">
+              <label>Password</label>
+              <div class="password-field">
+                <input type="password" id="ownerPassword" placeholder="Leave blank to keep current password" autocomplete="new-password">
+                <button type="button" class="toggle-pw" id="ownerPwToggle" aria-label="Show password">
+                  <svg class="icon-on" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                  <svg class="icon-off" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10.6 5.2A10.6 10.6 0 0112 5c7 0 11 7 11 7a17.9 17.9 0 01-3.4 4.3M6.7 6.7C3.4 8.6 1 12 1 12s4 7 11 7a10.4 10.4 0 004.9-1.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9.9 9.9a3 3 0 004.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <div class="field-hint">Stored encrypted — never saved or shown as plain text.</div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" id="accountSettingsSaveBtn">Save</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- ===== ADD ORDER MODAL ===== -->
+<div class="modal-overlay" id="orderModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 id="orderModalTitle">Add Order</h2>
+      <button class="modal-close" id="orderModalClose" aria-label="Close">✕</button>
+    </div>
+    <form id="addOrderForm">
+      <div class="form-grid">
+        <div class="field full">
+          <label>Order ID</label>
+          <input type="text" id="ordIdDisplay" disabled>
+          <div class="field-hint">Auto-generated — will be assigned by the database once connected.</div>
+        </div>
+        <div class="field full">
+          <label>Customer name</label>
+          <input type="text" id="ordCustomer" placeholder="e.g. Rohit Verma" required>
+        </div>
+        <div class="field">
+          <label>Date</label>
+          <input type="date" id="ordDate" required>
+        </div>
+        <div class="field">
+          <label>Time</label>
+          <input type="time" id="ordTime" required>
+        </div>
+        <div class="field full">
+          <label>Items</label>
+          <div class="order-items-list" id="orderItemsList"></div>
+          <button type="button" class="add-item-btn" id="addItemBtn">+ Add Item</button>
+        </div>
+        <div class="field">
+          <label>Amount (₹)</label>
+          <input type="number" id="ordAmount" placeholder="Auto calculated" readonly>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="link-btn" id="orderModalCancel">Cancel</button>
+        <button type="submit" class="btn-primary" id="orderModalSaveBtn">Save Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ===== ADD ITEM MODAL (opened from within Add/Edit Order) ===== -->
+<div class="modal-overlay" id="itemPickerOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Add Item</h2>
+      <button class="modal-close" id="itemPickerClose" aria-label="Close">✕</button>
+    </div>
+    <div class="form-grid">
+      <div class="field full">
+        <label>Product</label>
+        <!-- TODO: once the backend/database is connected, populate this dropdown from the
+             products API instead of reading the current Products table in the DOM. -->
+        <select id="itemPickerSelect"></select>
+      </div>
+      <div class="field full">
+        <label>Quantity</label>
+        <div class="qty-stepper">
+          <button type="button" id="itemPickerMinus" aria-label="Decrease quantity">−</button>
+          <input type="number" id="itemPickerQty" value="1" min="1" step="1">
+          <button type="button" id="itemPickerPlus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="link-btn" id="itemPickerCancel">Cancel</button>
+      <button type="button" class="btn-primary" id="itemPickerAddBtn">Add Item</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="queryModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Query Details</h2>
+      <button class="modal-close" id="queryModalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="query-detail-body">
+      <div class="qd-row"><span class="qd-label">Name</span><span class="qd-value" id="qdName"></span></div>
+      <div class="qd-row"><span class="qd-label">Gender</span><span class="qd-value" id="qdGender"></span></div>
+      <div class="qd-row"><span class="qd-label">Phone</span><span class="qd-value" id="qdPhone"></span></div>
+      <div class="qd-row"><span class="qd-label">Email</span><span class="qd-value" id="qdEmail"></span></div>
+      <div class="qd-row"><span class="qd-label">Address</span><span class="qd-value" id="qdAddress"></span></div>
+      <div class="qd-row qd-message"><span class="qd-label">Message</span><span class="qd-value" id="qdMessage"></span></div>
+      <div class="qd-row"><span class="qd-label">Received</span><span class="qd-value" id="qdReceived"></span></div>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="link-btn" id="queryModalCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+<!-- ===== ADD / EDIT PRODUCT MODAL ===== -->
+<div class="modal-overlay" id="productModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 id="productModalTitle">Add Product</h2>
+      <button class="modal-close" id="productModalClose" aria-label="Close">✕</button>
+    </div>
+    <form id="productForm">
+      <div class="form-grid">
+        <div class="field full">
+          <label>Product name</label>
+          <input type="text" id="prodName" placeholder="e.g. Full Cream Milk — 1L" required>
+        </div>
+        <div class="field full">
+          <label>Description</label>
+          <textarea id="prodDesc" rows="3" placeholder="Short description shown to customers" required></textarea>
+        </div>
+        <div class="field">
+          <label>Price (₹)</label>
+          <input type="number" id="prodPrice" placeholder="e.g. 68" min="0" step="1" required>
+        </div>
+        <div class="field">
+          <label>Image</label>
+          <input type="file" id="prodImageInput" accept="image/*">
+        </div>
+        <div class="field full" id="prodImagePreviewWrap" style="display:none;">
+          <label>Preview</label>
+          <div class="prod-thumb" style="width:64px; height:64px;"><img id="prodImagePreview" src="" alt="Product preview"></div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="link-btn" id="productModalCancel">Cancel</button>
+        <button type="submit" class="btn-primary" id="productModalSaveBtn">Save Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- ===== INVOICE PREVIEW MODAL ===== -->
+<div class="modal-overlay" id="invoiceModalOverlay">
+  <div class="modal-box modal-box-lg">
+    <div class="modal-head">
+      <h2>Invoice Preview</h2>
+      <button class="modal-close" id="invoiceModalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="invoice-scroll">
+      <div class="invoice-sheet" id="invoiceContent">
+        <div class="inv-head">
+          <div>
+            <div class="inv-brand">Anantjeet Dairy</div>
+            <div class="inv-brand-sub">Shop No. 14, Krishna Market, Lucknow, Uttar Pradesh</div>
+          </div>
+          <div class="inv-title">
+            <div class="inv-title-label">Invoice</div>
+            <div class="inv-title-id" id="invOrderId"></div>
+          </div>
+        </div>
+        <div class="inv-meta">
+          <div>
+            <div class="inv-meta-label">Billed To</div>
+            <div class="inv-meta-value" id="invCustomer"></div>
+          </div>
+          <div>
+            <div class="inv-meta-label">Order Date &amp; Time</div>
+            <div class="inv-meta-value" id="invDate"></div>
+          </div>
+        </div>
+        <table class="inv-table">
+          <thead><tr><th>Description</th><th style="text-align:center;">Qty</th><th style="text-align:right;">Price</th><th style="text-align:right;">Subtotal</th></tr></thead>
+          <tbody id="invItemsBody"></tbody>
+        </table>
+        <div class="inv-total-row">
+          <span>Grand Total</span>
+          <span id="invTotal"></span>
+        </div>
+        <div class="inv-foot">Thank you for choosing Anantjeet Dairy — fresh, trusted, daily.</div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="link-btn" id="invoiceModalCloseBtn">Close</button>
+      <button type="button" class="btn-primary" id="invoiceDownloadBtn">Download Invoice</button>
+    </div>
+  </div>
+</div>
+<script src="admin-dashboard-script.js"></script>
+</body>
+</html>

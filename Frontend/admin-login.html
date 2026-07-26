@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Anantjeet Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin-login-style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">
+    <span class="brand-name">Anantjeet Dairy</span>
+  </div>
+  <a href="index.html" class="back-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to site
+  </a>
+</div>
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.6"/><path d="M5 12a7 7 0 1114 0" stroke="currentColor" stroke-width="1.6"/><path d="M4 21a8 8 0 0116 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
+    <h1>Admin Login</h1>
+    <p class="lead">Restricted access for Anantjeet Dairy staff only.</p>
+    <div class="error-msg" id="errorMsg">
+      <span class="ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
+      </span>
+      <span id="errorText">Incorrect username or password. Please try again.</span>
+    </div>
+    <form id="adminLoginForm" novalidate>
+      <div class="field">
+        <label for="adminUser">Username</label>
+        <input type="text" id="adminUser" name="adminUser" placeholder="Enter your username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="adminPass">Password</label>
+        <div class="password-field">
+          <input type="password" id="adminPass" name="adminPass" placeholder="Enter your password" autocomplete="current-password" required>
+          <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">
+            <svg class="icon-on" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <svg class="icon-off" viewBox="0 0 24 24" fill="none"><path d="M3 3l18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10.6 5.2A10.6 10.6 0 0112 5c7 0 11 7 11 7a17.9 17.9 0 01-3.4 4.3M6.7 6.7C3.4 8.6 1 12 1 12s4 7 11 7a10.4 10.4 0 004.9-1.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9.9 9.9a3 3 0 004.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <button type="submit" class="btn-login" id="loginBtn">Log In</button>
+    </form>
+    <div class="divider-note">
+      Customer login &amp; signup <span class="badge">Coming Soon</span>
+    </div>
+  </div>
+</div>
+<p class="foot-note">© 2026 Anantjeet Dairy. Admin access only.</p>
+<script src="admin-login-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Anantjeet Dairy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reviews-style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div>
+        <span class="brand-name">Anantjeet Dairy</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="reviews.html" class="current">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="profile-menu">
+        <button class="profile-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Account menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20c1.4-3.6 4.4-5.5 7.5-5.5s6.1 1.9 7.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="profile-dropdown">
+          <a href="admin-login.html" class="pd-item pd-highlight">
+            <span class="pd-ic">👤</span> Login / Signup
+          </a>
+          <a href="javascript:void(0)" class="pd-item">
+            <span class="pd-ic">🛒</span> Cart
+            <span class="pd-badge">Coming Soon</span>
+          </a>
+          <a href="javascript:void(0)" class="pd-item">
+            <span class="pd-ic">📦</span> My Orders
+            <span class="pd-badge">Coming Soon</span>
+          </a>
+          <a href="contact.html" class="pd-item">
+            <span class="pd-ic">💬</span> Help &amp; Feedback
+          </a>
+        </div>
+      </div>
+      <button class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Reviews</span>
+    </div>
+    <h1>Customer Reviews</h1>
+  </div>
+</section>
+<section class="write-review">
+  <div class="wrap">
+    <div class="review-form-card">
+      <h2>Share your experience</h2>
+      <p class="lead">Tell other customers what you think — your review will appear on this page.</p>
+      <form id="reviewForm" novalidate>
+        <div class="field">
+          <label for="revName">Your Name</label>
+          <input type="text" id="revName" name="revName" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div class="field">
+          <label>Your Rating</label>
+          <div class="star-picker" id="starPicker">
+            <button type="button" data-val="1">★</button>
+            <button type="button" data-val="2">★</button>
+            <button type="button" data-val="3">★</button>
+            <button type="button" data-val="4">★</button>
+            <button type="button" data-val="5">★</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="revText">Your Review</label>
+          <textarea id="revText" name="revText" placeholder="What did you like about our products or service?" required></textarea>
+        </div>
+        <p class="form-error" id="formError">Please add your name, a star rating, and a short review.</p>
+        <button type="submit" class="btn btn-gold form-submit">Submit Review</button>
+        <div class="form-success" id="formSuccess">
+          <span class="tick">✓</span>
+          <span>Thanks for your review — it now appears below.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="all-reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What Customers Say</div>
+      <h2>All reviews</h2>
+      <p>Real words from the families and shops we serve every day.</p>
+    </div>
+    <div class="review-grid" id="reviewGrid">
+      <div class="review-card">
+        <p class="quote-mark">"</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="text">The milk is always fresh and the paneer tastes homemade. We've stopped looking anywhere else.</p>
+        <div class="review-who">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Ramesh Gupta</div>
+            <div class="review-loc">Regular customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="quote-mark">"</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="text">Reliable morning delivery and fair pricing — exactly what a dairy shop should be.</p>
+        <div class="review-who">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sunita Verma</div>
+            <div class="review-loc">Regular customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="quote-mark">"</p>
+        <div class="review-stars">★★★★★</div>
+        <p class="text">Their ghee has the aroma our grandmother's used to make. Genuinely trusted quality.</p>
+        <div class="review-who">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Anil Mishra</div>
+            <div class="review-loc">Regular customer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="gap:12px;">
+          <span class="brand-name" style="color:var(--milk);">Anantjeet Dairy</span>
+        </div>
+        <p>Serving fresh and quality dairy products with trust and care, every single day.</p>
+        <div class="foot-social">
+          <a href="javascript:void(0)" aria-label="Facebook">f</a>
+          <a href="javascript:void(0)" aria-label="Instagram">ig</a>
+          <a href="javascript:void(0)" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="javascript:void(0)">VishnuLok Colony, Lucknow</a></li>          <li><a href="javascript:void(0)">hello@anantjeetdairy.in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li><a href="javascript:void(0)">Mon – Sun</a></li>
+          <li><a href="javascript:void(0)">Morning: 9 AM – 2 PM</a></li>
+          <li><a href="javascript:void(0)">Evening: 4 PM – 10 PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bottom" style="padding-left:0; padding-right:0;">
+      <span>© 2026 Anantjeet Dairy. All rights reserved.</span>
+      <span>Designed with care for the community we serve.</span>
+    </div>
+  </div>
+</footer>
+<script src="reviews-script.js"></script>
+</body>
+</html>

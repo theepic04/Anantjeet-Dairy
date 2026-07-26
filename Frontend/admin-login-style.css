@@ -1,0 +1,123 @@
+:root{
+    --ink:#173441;
+    --ink-soft:#24505f;
+    --milk:#FBF8F1;
+    --milk-dim:#F3EEE1;
+    --gold:#CE9A2E;
+    --gold-soft:#e7c26b;
+    --text:#1e2a2e;
+    --text-soft:#5b6b6a;
+    --line: rgba(23,52,65,0.14);
+    --radius: 4px;
+    --danger:#a53535;
+    --danger-bg:#fbeaea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,.slab{font-family:'Zilla Slab',serif;}
+  a{text-decoration:none; color:inherit;}
+
+  /* ---------- Minimal top bar ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 32px; max-width:1180px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-name{font-family:'Zilla Slab',serif; font-weight:600; font-size:18px; color:var(--milk);}
+  .back-link{
+    font-size:13.5px; font-weight:500; color:rgba(251,248,241,.65);
+    display:flex; align-items:center; gap:6px; transition:color .15s ease;
+  }
+  .back-link:hover{color:var(--gold-soft);}
+
+  /* ---------- Centered login area ---------- */
+  .login-wrap{
+    min-height:calc(100vh - 76px);
+    display:flex; align-items:center; justify-content:center;
+    padding:20px 20px 60px;
+  }
+  .login-card{
+    width:100%; max-width:400px;
+    background:var(--milk); border-radius:6px;
+    padding:44px 38px 38px;
+    box-shadow:0 30px 70px -30px rgba(0,0,0,.5);
+  }
+  .login-icon{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--ink); color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px;
+  }
+  .login-card h1{
+    font-size:23px; font-weight:600; text-align:center; margin:0 0 6px; color:var(--ink);
+  }
+  .login-card p.lead{
+    text-align:center; font-size:13.5px; color:var(--text-soft); margin:0 0 30px; line-height:1.6;
+  }
+
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:8px;
+  }
+  .field input{
+    width:100%; padding:12px 14px; border-radius:3px; border:1.5px solid var(--line);
+    background:var(--milk-dim); font-family:'Inter',sans-serif; font-size:14.5px; color:var(--text);
+    outline:none; transition:border-color .15s ease, background .15s ease;
+  }
+  .field input:focus{border-color:var(--gold); background:var(--milk);}
+
+  .password-field{position:relative;}
+  .password-field input{padding-right:44px;}
+  .toggle-pw{
+    position:absolute; right:6px; top:50%; transform:translateY(-50%);
+    width:32px; height:32px; border:none; background:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; color:var(--text-soft);
+    border-radius:3px; transition:color .15s ease, background .15s ease;
+  }
+  .toggle-pw:hover{color:var(--ink); background:rgba(23,52,65,.06);}
+  .toggle-pw svg{width:19px; height:19px;}
+  .toggle-pw .icon-off{display:none;}
+  .toggle-pw.showing .icon-on{display:none;}
+  .toggle-pw.showing .icon-off{display:block;}
+
+  .error-msg{
+    display:none; align-items:flex-start; gap:10px;
+    background:var(--danger-bg); border:1px solid rgba(165,53,53,.25); color:var(--danger);
+    border-radius:3px; padding:12px 14px; font-size:13.5px; margin-bottom:20px; line-height:1.5;
+  }
+  .error-msg .ic{flex-shrink:0; margin-top:1px;}
+
+  .btn-login{
+    width:100%; padding:13px 22px; border-radius:var(--radius); border:none;
+    background:var(--gold); color:var(--ink); font-weight:600; font-size:14.5px;
+    cursor:pointer; transition:background .15s ease, transform .15s ease;
+  }
+  .btn-login:hover{background:var(--gold-soft);}
+  .btn-login:active{transform:translateY(1px);}
+  .btn-login[disabled]{opacity:.65; cursor:not-allowed;}
+
+  .divider-note{
+    text-align:center; font-size:12px; color:var(--text-soft); margin-top:26px;
+    padding-top:20px; border-top:1px solid var(--line);
+  }
+  .divider-note .badge{
+    display:inline-block; font-size:9px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    background:var(--milk-dim); color:var(--text-soft); border:1px solid var(--line); border-radius:999px;
+    padding:3px 8px; margin-left:6px; vertical-align:1px;
+  }
+
+  .foot-note{
+    text-align:center; font-size:12px; color:rgba(251,248,241,.4); padding:20px 20px 30px;
+  }
+
+  @media (max-width: 480px){
+    .login-card{padding:36px 26px 30px;}
+    .topbar{padding:20px 20px;}
+  }
