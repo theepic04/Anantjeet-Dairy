@@ -96,7 +96,7 @@
 
         const response =
         await fetch(
-            "http://localhost:5000/api/reviews"
+            "/api/reviews"
         );
 
         const result =
@@ -153,7 +153,7 @@ loadReviews();
 
     const response = await fetch(
 
-        "http://localhost:5000/api/reviews/add",
+        "/api/reviews/add",
 
         {
 
