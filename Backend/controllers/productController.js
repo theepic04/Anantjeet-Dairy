@@ -151,7 +151,15 @@ const deleteProduct = (req, res) => {
     db.query(sql, [id], (err, result) => {
 
         if (err) {
+
             console.error(err);
+
+            if (err.code === "ER_ROW_IS_REFERENCED_2") {
+                return res.status(400).json({
+                    success: false,
+                    message: "This product cannot be deleted because it is used in existing orders."
+                });
+            }
 
             return res.status(500).json({
                 success: false,
